@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <script>
+        $(document).ready(function(){
+            $('#inserir').click(function(){
+                window.location.href = '/cadastrar';            
+            })
+            $('#editar').click(function(){
+                window.location.href = '/alterar';
+            })
+            $('#apagar').click(function(){
+                window.location.href = '/deletar';            
+            })
+        });
+    </script>
+    <title>Atividade 9</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Codigo</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preco</th>
+                <th>Editar</th>
+                <th>Apagar</th>
+            </tr>
+            <%for (n of msg){%>
+            <tr>
+                <td id="codigo"><%= n.codigo %></td>
+                <td><%= n.descricao %></td>
+                <td><%= n.quantidade %></td>
+                <td><%= n.preco %></td>
+                <td><a href="/alterar?codigo=<%=n.codigo%>">Editar</a></td>
+                <td><a href="/deletar?codigo=<%=n.codigo%>">Apagar</a></td>
+            </tr>
+            <%}%>
+        </table>
+    </form>
+    </br>
+    <a href="/cadastrar">Inserir um novo produto</a>
+</body>
+</html>

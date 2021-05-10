@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action='/<%= acao %>' method="POST">
+        <label>Codigo</label>
+        <%if(acao == "update"){%> 
+        <input type="text" id="codigo" name="codigo" value='<%= codigo.codigo %>'/></br>
+        <%}else{%>
+        <input type="text" id="codigo" name="codigo"/></br>
+        <%}%>
+        <label>Descrição</label>
+        <input type="text" id="descricao" name="descricao"/> </br>
+        <label>Quantidade</label>
+        <input type="text" id="quantidade" name="quantidade"/> </br>
+        <label>Preço</label>
+        <input type="text" id="preco" name="preco"/> </br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
